@@ -4,13 +4,13 @@ const jwt = require('jsonwebtoken');
 function auth(req,res,next){
 const token = req.header('token');
 
-if(!token) return res.status(401).send('access denied. no token provided');
+if(!token) return res.status(401).send({Error: 'access denied. no token provided'});
 
 try{
 
     const decoded = jwt.verify(token, "vidly_jwtPrivateKey");
     console.log(decoded);
-    req.mails = decoded;
+    req.user = decoded;
     next();
 }
 catch(ex){

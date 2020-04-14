@@ -11,6 +11,6 @@ function generateOtp(email){
     return token;
 }
 
-generateOtp('ssaayyantani@gmail.com');
+//generateOtp('ssaayyantani@gmail.com');
 
 module.exports = generateOtp;
